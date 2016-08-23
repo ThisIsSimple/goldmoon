@@ -1,0 +1,26 @@
+#download-link {
+  margin-top: 20px;
+  text-align: center;
+}
+
+#download-link ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#download-link li {
+  display: inline;
+  padding: 0;
+}
+
+#download-link a {
+  width: 200px;
+}
+
+#android {
+  margin-right: 5px;
+}
+
+#ios {
+  margin-left: 5px;
+}
