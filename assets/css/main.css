@@ -2265,6 +2265,10 @@
 			color: #6b88e6;
 		}
 
+		.icon.style7:before {
+			color: #FED831;
+		}
+
 		.icon.major {
 			text-decoration: none;
 			color: #555;

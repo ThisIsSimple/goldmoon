@@ -10,17 +10,14 @@
 
 #download-link li {
   display: inline;
-  padding: 0;
+  padding: 5px;
 }
 
 #download-link a {
   width: 200px;
+  margin: 5px;
 }
 
-#android {
-  margin-right: 5px;
-}
-
-#ios {
-  margin-left: 5px;
+p {
+  font-weight: lighter;
 }
