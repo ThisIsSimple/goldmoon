@@ -22,6 +22,6 @@ p {
   font-weight: lighter;
 }
 
-.image.right, .image.left {
+.img-small img {
   max-width: 20%;
 }
