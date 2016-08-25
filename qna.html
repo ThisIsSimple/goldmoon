@@ -4,9 +4,9 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
-		<title>GOLD MOON</title>
+        <title>GOLD MOON</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
@@ -14,7 +14,24 @@
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<link rel="stylesheet" href="assets/css/index.css" />
-	</head>
+<SCRIPT LANGUAGE="JavaScript">
+<!--
+function chkMailFrm() {
+ var f = document.formmail;
+ if (!f.senduser.value) {
+  alert("이름을 입력해주세요");
+  f.senduser.focus();
+  return false;
+ }
+ if (!f.email.value) {
+  alert("이메일을 입력해주세요");
+  f.email.focus();
+  return false;
+ }
+}
+//-->
+</SCRIPT>
+		</head>
 	<body>
 
 		<!-- Header -->
@@ -28,8 +45,8 @@
 
 					<div id="download-link">
 						<ul>
-							<li><a href="/" class="button special" id="android">Home</a></li>
-							<li><a href="#" class="button" id="ios">Q&amp;A</a></li>
+							<li><a href="index.html" class="button special" id="android">Home</a></li>
+							<li><a href="/notice" class="button" id="ios">Notice</a></li>
 						</ul>
 					</div>
 
@@ -37,6 +54,7 @@
 			</section>
 
 		<!-- One -->
+
 			<section id="one" class="main style1 special">
 				<div class="container">
 					<section>
@@ -44,47 +62,30 @@
 							<h2>질문하기</h2>
 						</header>
 						<p>여러분의 소중한 의견, 기다리고 있습니다.</p>
-						<form method="post" action="#">
+                        <form name="formmail" method="post" action="data.php" onSubmit="return chkMailFrm()">
 							<div class="row uniform 50%">
+								<div class="12u$">
+									<input type="text" name="title" id="title" value="" placeholder="질문의 제목" />
+								</div>
 								<div class="6u 12u$(xsmall)">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
+									<input type="text" name="senduser" id="senduser" value="" placeholder="당신의 이름" />
 								</div>
 								<div class="6u$ 12u$(xsmall)">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
+									<input type="email" name="email" id="email" value="" placeholder="당신의 이메일" />
 								</div>
 								<div class="12u$">
 									<div class="select-wrapper">
-										<select name="demo-category" id="demo-category">
-											<option value="">- Category -</option>
-											<option value="1">Manufacturing</option>
-											<option value="1">Shipping</option>
-											<option value="1">Administration</option>
-											<option value="1">Human Resources</option>
+										<select name="title" id="category">
+											<option value="">- 질문 종류 -</option>
+											<option value="1">서비스 질문</option>
+											<option value="2">서비스 오류</option>
+											<option value="3">거래 과정에서의 문제</option>
+											<option value="4">기타</option>
 										</select>
 									</div>
 								</div>
-								<div class="4u 12u$(small)">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="4u 12u$(small)">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="4u$ 12u$(small)">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="6u 12u$(small)">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="6u$ 12u$(small)">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
 								<div class="12u$">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+									<textarea name="body" id="body" placeholder="메세지를 작성해 주세요." rows="6"></textarea>
 								</div>
 								<div class="12u$">
 									<ul class="actions">
@@ -93,10 +94,12 @@
 									</ul>
 								</div>
 							</div>
-						</form>
-					</section>
+		</form>
+
+</section>
 				</div>
 			</section>
+
 
 			<!-- Footer -->
 				<section id="footer">
